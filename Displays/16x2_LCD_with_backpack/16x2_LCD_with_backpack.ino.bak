@@ -1,0 +1,49 @@
+/*
+void begin(uint8_t cols, uint8_t rows, uint8_t charsize = LCD_5x8DOTS );
+    void clear();
+    void home();
+    void noDisplay();
+    void display();
+    void noBlink();
+    void blink();
+    void noCursor();
+    void cursor();
+    void scrollDisplayLeft();
+    void scrollDisplayRight();
+    void printLeft();
+    void printRight();
+    void leftToRight();
+    void rightToLeft();
+    void shiftIncrement();
+    void shiftDecrement();
+    void noBacklight();
+    void backlight();
+    void autoscroll();
+    void noAutoscroll(); 
+    void createChar(uint8_t, uint8_t[]);
+    void setCursor(uint8_t, uint8_t); 
+    void setDelayTime(int t);
+    void printHangul(String txt, byte startPoint);
+*/
+
+
+#include <LiquidCrystal_I2C_Hangul.h>
+#include <Wire.h>
+
+LiquidCrystal_I2C_Hangul lcd(0x27, 16, 2);  //LCD at address 0x27, 16 characters and 2 rows
+
+void setup() {
+  Serial.begin(9600);
+  lcd.init();
+  lcd.backlight();
+}
+
+void loop() {
+  lcd.print("Hello World!");
+  delay(2000);
+  lcd.clear();
+  lcd.print("Sheila Bennett");  
+  delay(2000);
+  lcd.clear();
+  
+  }
